@@ -11,8 +11,17 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
-        mail: {},
+        url: 'http://w.saccaco.me',
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@sandbox01510d68320e49469f576d49840f57b0.mailgun.org', // mailgun username
+                    pass: '5b055eda4e6aa16e4672c9cf532806a9'  // mailgun password
+                }
+            }
+        },
         // database: {
         //     client: 'sqlite3',
         //     connection: {
@@ -25,7 +34,7 @@ config = {
             connection: {
                 host     : '127.0.0.1',
                 user     : 'root',
-                password : '',
+                password : 'ghost_password',
                 database : 'ghost_db',
                 charset  : 'utf8'
             }
